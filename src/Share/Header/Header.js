@@ -8,6 +8,7 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import logo from '../../images/logo.png'
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image'
+import LeftNavBar from '../LeftsideNavBar/LeftNavBar';
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
 
@@ -49,6 +50,9 @@ const Header = () => {
                             }
                         </Link>
                     </Nav>
+                    <div className='d-lg-none'>
+                        <LeftNavBar ></LeftNavBar>
+                    </div>
                 </Navbar.Collapse>
             </Container>
         </Navbar>

@@ -3,6 +3,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Outlet } from 'react-router-dom';
 import Footer from '../../Share/Footer/Footer';
 import Header from '../../Share/Header/Header';
+import LeftNavBar from '../../Share/LeftsideNavBar/LeftNavBar';
 
 const Main = () => {
     return (
@@ -10,7 +11,10 @@ const Main = () => {
             <Header></Header>
             <Container>
                 <Row>
-                    <Col>
+                    <Col lg='3' className='d-none d-lg-block'>
+                        <LeftNavBar></LeftNavBar>
+                    </Col>
+                    <Col lg='9'>
                         <Outlet></Outlet>
                     </Col>
                 </Row>
