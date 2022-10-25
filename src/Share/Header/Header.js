@@ -9,8 +9,14 @@ import logo from '../../images/logo.png'
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image'
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logout } = useContext(AuthContext);
 
+    const handlelogout = () => {
+        logout()
+            .then(() => { })
+            .catch(error => console.error(error))
+    }
+    console.log(user);
     return (
         <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
             <Container>
@@ -19,6 +25,7 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/'>Courses</Link></Nav.Link>
+                        <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/'>FAQ</Link></Nav.Link>
                         <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/about'>Block</Link></Nav.Link>
                     </Nav>
                     <Nav>
@@ -26,19 +33,21 @@ const Header = () => {
                             {
                                 user?.uid ?
                                     <>
-                                        <span className='d-flex align-items-center justify-content-center'>{user?.displayName}</span>
-                                        <Button variant="light">Log Out</Button>
+                                        <span className='d-flex align-items-center justify-content-center me-3'>{user?.displayName}</span>
+                                        <Button onClick={handlelogout} variant="light">Log Out</Button>
                                     </>
                                     :
                                     <>
-                                        <Link className='me-2 d-flex align-items-center justify-content-center text-bold' to='/login'>Login</Link>
-                                        <Link className=' d-flex align-items-center justify-content-center' to='/register'>Register</Link>
+                                        <Link className='me-3 d-flex align-items-center justify-content-center text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/login'>Login</Link>
+                                        <Link className='me-3 d-flex align-items-center justify-content-center text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/register'>Register</Link>
                                     </>
                             }
                         </>
-                        {user?.photoURL ?
-                            <Image style={{ height: '20px' }} roundedCircle src={user.photoURL}></Image> : <FaUser></FaUser>
-                        }
+                        <Link to='/profile'>
+                            {user?.photoURL ?
+                                <Image className='ms-3 d-flex align-items-center justify-content-center' style={{ height: '40px' }} roundedCircle src={user.photoURL}></Image> : <FaUser ></FaUser>
+                            }
+                        </Link>
                     </Nav>
                 </Navbar.Collapse>
             </Container>
