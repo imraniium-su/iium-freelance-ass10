@@ -28,14 +28,14 @@ const Header = () => {
                     <Nav className="mx-auto">
                         <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/'>Courses</Link></Nav.Link>
                         <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/faq'>FAQ</Link></Nav.Link>
-                        <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/block'>Block</Link></Nav.Link>
+                        <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/block'>Blog</Link></Nav.Link>
                     </Nav>
                     <Nav>
                         <>
                             {
                                 user?.uid ?
                                     <>
-                                        <span className='d-flex align-items-center justify-content-center me-3'>{user?.displayName}</span>
+                                        <span className='d-flex align-items-center justify-content-center me-3 fw-bold'>{user?.displayName}</span>
                                         <Button onClick={handlelogout} variant="light">Log Out</Button>
                                     </>
                                     :
