@@ -9,6 +9,7 @@ import logo from '../../images/logo.png'
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image'
 import LeftNavBar from '../LeftsideNavBar/LeftNavBar';
+import './Header.css'
 const Header = () => {
     const { user, logout } = useContext(AuthContext);
 
@@ -21,7 +22,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
             <Container>
-                <Navbar.Brand ><Link to='/'><img style={{ height: '65px', }} src={logo} alt="" /></Link></Navbar.Brand>
+                <Navbar.Brand ><Link className=' ' style={{ textDecoration: 'none' }} to='/'><img style={{ height: '60px', weight: '30px' }} src={logo} alt="" /> <span className='text-black fs-4  fw-bold design' >IIUM FREELANCE</span></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">

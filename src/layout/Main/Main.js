@@ -4,6 +4,7 @@ import { Outlet } from 'react-router-dom';
 import Footer from '../../Share/Footer/Footer';
 import Header from '../../Share/Header/Header';
 import LeftNavBar from '../../Share/LeftsideNavBar/LeftNavBar';
+import RightNavBar from '../../Share/RightNavBar/RightNavBar';
 
 const Main = () => {
     return (
@@ -11,11 +12,14 @@ const Main = () => {
             <Header></Header>
             <Container>
                 <Row>
-                    <Col lg='3' className='d-none d-lg-block'>
+                    <Col lg='2' className='d-none d-lg-block'>
                         <LeftNavBar></LeftNavBar>
                     </Col>
-                    <Col lg='9'>
+                    <Col lg='8'>
                         <Outlet></Outlet>
+                    </Col>
+                    <Col lg='2' >
+                        <RightNavBar></RightNavBar>
                     </Col>
                 </Row>
             </Container>

@@ -9,8 +9,8 @@ const LeftNavBar = () => {
             .then(data => setCatagories(data))
     }, [])
     return (
-        <div>
-            <h3>All courses : {catagories.length}</h3>
+        <div className='my-5'>
+
             <div>
                 {catagories.map(catagory => <p key={catagory.id}><Link className='text-black' to={`/catagory/${catagory.id}`}>{catagory.name}</Link></p>)}
             </div>
