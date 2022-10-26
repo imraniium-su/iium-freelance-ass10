@@ -1,11 +1,11 @@
 import React from 'react';
 
-const About = () => {
+const FaQ = () => {
     return (
         <div>
-            This about
+            ghjgh
         </div>
     );
 };
 
-export default About;
+export default FaQ;

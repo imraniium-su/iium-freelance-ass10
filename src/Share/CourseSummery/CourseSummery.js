@@ -14,7 +14,7 @@ const CourseSummery = ({ course }) => {
                         <p className="card-text mb-1">{details.length > 40 ?
                             <>{details.slice(0, 35) + '...'}<Link to={`/course/${_id}`}>Read more</Link></> :
                             <>{details}</>}</p>
-                        <p className='mb-1'>Course Cost: {price}$</p>
+                        <p className='mb-1'>Course Cost: ${price}</p>
                         <p>Duration : {time} Month</p>
                         <div className=" d-flex justify-content-between align-items-center mb-4">
                             <div>
@@ -24,12 +24,12 @@ const CourseSummery = ({ course }) => {
                             <div>
                                 <FaEye className='me-2'></FaEye>
                                 <span>
-                                    Purches : {total_view}
+                                    Purchase : {total_view}
                                 </span>
                             </div>
                         </div>
                         <div className='w-60 mx-auto'>
-                            <Button className='w-100 fw-bold' variant="info">Add To Cart</Button>
+                            <Link to={`/course-checkout/${_id}`}><Button className='w-100 fw-bold' variant="info"> Get premium access </Button></Link>
                         </div>
                     </div>
                 </div>

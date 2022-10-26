@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 
 const Course = () => {
     const course = useLoaderData();
-    const { picture, price, time, title, rating, details, category_id, total_view } = course;
+    const { picture, price, time, title, rating, details, category_id, total_view, _id } = course;
     return (
         <div className='my-4 mx-2 '>
             <div className="">
@@ -31,7 +31,7 @@ const Course = () => {
                         </div>
                         <div className=' d-flex justify-content-around'>
                             <p className=''><Link to={`/catagory/${category_id}`}><Button className='w-100 fw-bold' variant="info">All Catagorey Course</Button></Link></p>
-                            <p><Button className='w-100 fw-bold' variant="info">Add To Cart</Button></p>
+                            <p><Link to={`/course-checkout/${_id}`}><Button className='w-100 fw-bold' variant="info"> Get premium access </Button></Link></p>
                         </div>
                     </div>
                 </div>

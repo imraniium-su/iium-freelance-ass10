@@ -68,7 +68,7 @@ const Register = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='bg-light mt-4 py-3 w-50 mx-auto shadow-lg rounded'>
+        <div className='bg-light mt-4 py-3 w-56 mx-auto shadow-lg rounded'>
             <Form className='w-50 mx-auto' onSubmit={handleSubmit}>
                 <h3>Please Register Now!</h3>
                 <Form.Group className="mb-3" controlId="formBasicEmail">

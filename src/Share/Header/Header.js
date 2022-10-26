@@ -27,8 +27,8 @@ const Header = () => {
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
                         <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/'>Courses</Link></Nav.Link>
-                        <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/'>FAQ</Link></Nav.Link>
-                        <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/about'>Block</Link></Nav.Link>
+                        <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/faq'>FAQ</Link></Nav.Link>
+                        <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/block'>Block</Link></Nav.Link>
                     </Nav>
                     <Nav>
                         <>

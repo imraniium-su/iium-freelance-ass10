@@ -26,6 +26,7 @@ const Login = () => {
                 setError('')
                 if (user.emailVerified) {
                     navigate(from, { replace: true });
+                    toast.success('Successfully login')
                 }
                 else {
                     toast.error('Your email is not Verified , Please verified your email address.')
@@ -48,7 +49,7 @@ const Login = () => {
             .catch(error => console.error(error))
     }
     return (
-        <div className='bg-light mt-4 py-3 w-50 mx-auto shadow-lg rounded'>
+        <div className='bg-light mt-4 py-3 w-60 mx-auto shadow-lg rounded'>
             <Form className='w-50 mx-auto' onSubmit={handlesingin}>
                 <h2>Please log In Now!</h2>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
