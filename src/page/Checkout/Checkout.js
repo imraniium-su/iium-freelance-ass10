@@ -8,7 +8,7 @@ const Checkout = () => {
     return (
         <div className='rounded shadow-lg my-3 p-3'>
             <img src={picture} className="card-img-top" alt="..." />
-            <h2 className="card-title fw-bold text-center text-warning design">{title}</h2>
+            <h2 className="card-title fw-bold text-center text-warning design ">{title}</h2>
         </div>
     );
 };
