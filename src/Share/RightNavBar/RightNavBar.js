@@ -7,8 +7,8 @@ import { FaArrowRight, FaFacebook, FaTwitter, FaWhatsapp, FaTwitch, FaPhone, FaA
 const RightNavBar = () => {
     return (
         <div className='mt-5 '>
-            <Carousel>
-                <Carousel.Item>
+            <Carousel >
+                <Carousel.Item >
                     <img
                         className="d-block w-100"
                         src='https://media.istockphoto.com/photos/education-picture-id1130121962?k=20&m=1130121962&s=612x612&w=0&h=sn37wsoZ4bqE8-kQm6jd_tc_-eb9-gCrKbieo0mIlGg='
