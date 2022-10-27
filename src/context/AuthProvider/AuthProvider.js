@@ -7,6 +7,7 @@ const auth = getAuth(app)
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [theme, setTheme] = useState('light')
     const googleprovider = new GoogleAuthProvider();
     const githubprovider = new GithubAuthProvider();
     const createUser = (email, password) => {
@@ -53,7 +54,7 @@ const AuthProvider = ({ children }) => {
             unsubscribe();
         }
     }, [])
-    const authInfo = { user, loading, providerLogin, logout, createUser, singIn, setLoading, updateuserprofile, verfiemail, singInwithGoogle, singinWithGitHub };
+    const authInfo = { user, setUser, loading, providerLogin, logout, createUser, singIn, setLoading, updateuserprofile, verfiemail, singInwithGoogle, singinWithGitHub, theme, setTheme };
     return (
         <div>
             <AuthContext.Provider value={authInfo}>

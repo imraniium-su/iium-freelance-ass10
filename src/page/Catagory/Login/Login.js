@@ -8,7 +8,7 @@ import { FaGoogle, FaGithub } from 'react-icons/fa';
 
 const Login = () => {
     const [error, setError] = useState('');
-    const { singIn, setLoading, singInwithGoogle } = useContext(AuthContext);
+    const { singIn, setLoading, singInwithGoogle, singinWithGitHub, setUser } = useContext(AuthContext);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -48,6 +48,18 @@ const Login = () => {
             })
             .catch(error => console.error(error))
     }
+    const handlegithubsingin = () => {
+        singinWithGitHub()
+            .then(result => {
+                const user = result.user;
+                user.emailVerified = true;
+                setUser(user);
+                console.log(user);
+
+            })
+            .catch(error => console.error(error))
+            .finally(() => { setLoading(false) })
+    }
     return (
         <div className='bg-light mt-4 py-3 w-60 mx-auto shadow-lg rounded'>
             <Form className='w-50 mx-auto' onSubmit={handlesingin}>
@@ -79,7 +91,7 @@ const Login = () => {
                 <Button onClick={handleGooglesingIn} className='w-100 mx-auto border mb-3 fw-bold' variant="light" type="submit"><FaGoogle className='me-2 text-primary'></FaGoogle>
                     Login with Google
                 </Button>
-                <Button className='w-100 border fw-bold' variant="light" type="submit"><FaGithub className='me-2'></FaGithub>
+                <Button onClick={handlegithubsingin} className='w-100 border fw-bold' variant="light" type="submit"><FaGithub className='me-2'></FaGithub>
                     Login with Git Hub
                 </Button>
             </div>

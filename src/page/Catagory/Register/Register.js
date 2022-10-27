@@ -9,7 +9,7 @@ const Register = () => {
 
     const [error, setError] = useState('');
     const [accepted, setAccepted] = useState(false);
-    const { createUser, updateuserprofile, verfiemail, singInwithGoogle, singinWithGitHub } = useContext(AuthContext);
+    const { createUser, updateuserprofile, verfiemail, singInwithGoogle, singinWithGitHub, setUser, setLoading } = useContext(AuthContext);
     const handleSubmit = event => {
         event.preventDefault();
         const form = event.target;
@@ -62,10 +62,13 @@ const Register = () => {
         singinWithGitHub()
             .then(result => {
                 const user = result.user;
+                user.emailVerified = true;
+                setUser(user);
                 console.log(user);
 
             })
             .catch(error => console.error(error))
+            .finally(() => { setLoading(false) })
     }
     return (
         <div className='bg-light mt-4 py-3 w-56 mx-auto shadow-lg rounded'>

@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { FaUser } from 'react-icons/fa';
+import { FaUser, FaSun, FaMoon } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 import logo from '../../images/logo.png'
@@ -11,7 +11,7 @@ import Image from 'react-bootstrap/Image'
 import LeftNavBar from '../LeftsideNavBar/LeftNavBar';
 import './Header.css'
 const Header = () => {
-    const { user, logout } = useContext(AuthContext);
+    const { user, logout, theme, setTheme } = useContext(AuthContext);
 
     const handlelogout = () => {
         logout()
@@ -19,6 +19,16 @@ const Header = () => {
             .catch(error => console.error(error))
     }
     console.log(user);
+
+    const handleTheme = () => {
+        if (theme === 'light') {
+            setTheme('dark')
+        } else if (theme === 'dark') {
+            setTheme('light')
+        }
+        console.log(theme);
+    }
+
     return (
         <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
             <Container>
@@ -50,7 +60,14 @@ const Header = () => {
                                 <Image className='ms-3 d-flex align-items-center justify-content-center' style={{ height: '40px' }} roundedCircle src={user.photoURL}></Image> : <FaUser ></FaUser>
                             }
                         </Link>
+
                     </Nav>
+                    <FaSun className='ms-3'></FaSun>
+                    <div className="form-check form-switch mx-2">
+                        <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={handleTheme} />
+                    </div>
+                    <FaMoon></FaMoon>
+
                     <div className='d-lg-none'>
                         <LeftNavBar ></LeftNavBar>
                     </div>

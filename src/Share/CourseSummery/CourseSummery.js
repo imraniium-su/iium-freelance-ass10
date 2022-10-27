@@ -12,7 +12,7 @@ const CourseSummery = ({ course }) => {
                     <div className="card-body">
                         <h5 className="card-title mb-1 fw-bold">{title}</h5>
                         <p className="card-text mb-1">{details.length > 40 ?
-                            <>{details.slice(0, 35) + '...'}<Link to={`/course/${_id}`}>Read more</Link></> :
+                            <>{details.slice(0, 35) + '.....'}<Link to={`/course/${_id}`}>Read more Details</Link></> :
                             <>{details}</>}</p>
                         <p className='mb-1'>Course Cost: ${price}</p>
                         <p>Duration : {time} Month</p>

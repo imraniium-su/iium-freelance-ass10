@@ -17,23 +17,23 @@ export const routes = createBrowserRouter([
         path: '/', element: <Main></Main>, children: [
             {
                 path: '/', element: <Home></Home>,
-                loader: () => fetch('http://localhost:5000/course')
+                loader: () => fetch('https://assignment-10-server-drab.vercel.app/course')
             },
             { path: '/block', element: <Block></Block> },
             {
                 path: '/catagory/:id',
                 loader: ({ params }) => {
-                    return fetch(`http://localhost:5000/catagory/${params.id}`)
+                    return fetch(`https://assignment-10-server-drab.vercel.app/catagory/${params.id}`)
                 },
                 element: <Catagories></Catagories>
             },
             {
                 path: '/course/:id', element: <PrivateRoutes><Course></Course></PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-drab.vercel.app/course/${params.id}`)
             },
             {
                 path: '/course-checkout/:id', element: <PrivateRoutes><Checkout></Checkout> </PrivateRoutes>,
-                loader: ({ params }) => fetch(`http://localhost:5000/course/${params.id}`)
+                loader: ({ params }) => fetch(`https://assignment-10-server-drab.vercel.app/course/${params.id}`)
             },
             { path: '/login', element: <Login></Login> },
             { path: '/register', element: <Register></Register> },
