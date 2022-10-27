@@ -47,7 +47,7 @@ const Header = () => {
                                 user?.uid ?
                                     <>
                                         <span className='d-flex align-items-center justify-content-center me-3 fw-bold'>{user?.displayName}</span>
-                                        <Button onClick={handlelogout} variant="light">Log Out</Button>
+                                        <Button className=' mx-auto' onClick={handlelogout} variant="light">Log Out</Button>
                                     </>
                                     :
                                     <>

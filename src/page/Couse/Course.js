@@ -13,20 +13,24 @@ const Course = () => {
         <div className='my-4 mx-2  '>
             <div className="" ref={ref}>
                 <div className="card shadow-lg rounded">
+                    <div className='d-flex justify-content-between mt-5 mx-5 '>
+                        <h3 className="card-title">{title}</h3>
+                        <div>
+                            <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                                {({ toPdf }) => (
+                                    <button onClick={toPdf}>Download <FaDownload className='me-4'></FaDownload></button>
+                                )}
+                            </ReactToPdf>
+
+                        </div>
+                    </div>
                     <img src={picture} className="card-img-top" alt="..." />
                     <div className="card-body bg-light">
-                        <h5 className="card-title">{title}</h5>
-                        <p>{details}</p>
-                        <div className='d-flex justify-content-between'>
-                            <p>Course Cost: {price}$</p>
-                            <div>
-                                <ReactToPdf targetRef={ref} filename="div-blue.pdf">
-                                    {({ toPdf }) => (
-                                        <button onClick={toPdf}>Download <FaDownload className='me-4'></FaDownload></button>
-                                    )}
-                                </ReactToPdf>
 
-                            </div>
+                        <p>{details}</p>
+                        <div >
+                            <p>Course Cost: {price}$</p>
+
                         </div>
                         <p className='mt-0'>Duration : {time} Month</p>
                         <div className=" d-flex justify-content-between align-items-center mb-4">
