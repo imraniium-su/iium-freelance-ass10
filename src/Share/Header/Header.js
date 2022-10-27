@@ -22,7 +22,7 @@ const Header = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="info" variant="dark">
             <Container>
-                <Navbar.Brand ><Link className=' ' style={{ textDecoration: 'none' }} to='/'><img style={{ height: '60px', weight: '30px' }} src={logo} alt="" /> <span className='text-black fs-4  fw-bold design' >IIUM FREELANCE</span></Link></Navbar.Brand>
+                <Navbar.Brand ><Link style={{ textDecoration: 'none' }} to='/'><img style={{ height: '60px', weight: '30px' }} src={logo} alt="" /> <span className='text-black fs-4  fw-bold design' >IIUM FREELANCE</span></Link></Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="mx-auto">
