@@ -12,7 +12,7 @@ const LeftNavBar = () => {
         <div className='my-5'>
 
             <div>
-                {catagories.map(catagory => <p key={catagory.id}><Link className='text-black' to={`/catagory/${catagory.id}`}>{catagory.name}</Link></p>)}
+                {catagories.map(catagory => <p key={catagory.id}><Link style={{ textDecoration: 'none' }} className='text-black fw-bold' to={`/catagory/${catagory.id}`}>{catagory.name}</Link></p>)}
             </div>
         </div>
     );

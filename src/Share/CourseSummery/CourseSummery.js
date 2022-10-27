@@ -28,8 +28,9 @@ const CourseSummery = ({ course }) => {
                                 </span>
                             </div>
                         </div>
-                        <div className='w-60 mx-auto'>
-                            <Link to={`/course-checkout/${_id}`}><Button className='w-100 fw-bold' variant="info"> Get premium access </Button></Link>
+                        <div className=' d-flex justify-content-around'>
+                            <p className=''><Link to={`/course/${_id}`}><Button className='w-100 fw-bold' variant="info">Course Details</Button></Link></p>
+                            <p><Link to={`/course-checkout/${_id}`}><Button className='w-100 fw-bold' variant="info"> Get premium access </Button></Link></p>
                         </div>
                     </div>
                 </div>

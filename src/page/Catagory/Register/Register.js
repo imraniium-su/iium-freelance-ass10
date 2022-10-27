@@ -22,6 +22,7 @@ const Register = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                setUser(user);
                 setError('');
                 handleUpdateUserprofile(name, photoURL);
                 handleemailVerfication();
@@ -62,12 +63,12 @@ const Register = () => {
         singinWithGitHub()
             .then(result => {
                 const user = result.user;
-                user.emailVerified = true;
-                setUser(user);
-                console.log(user);
 
             })
-            .catch(error => console.error(error))
+            .catch(error => {
+                console.error(error)
+                setError(error.message);
+            })
             .finally(() => { setLoading(false) })
     }
     return (

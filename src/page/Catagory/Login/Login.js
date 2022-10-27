@@ -22,6 +22,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setUser(user);
                 form.reset()
                 setError('')
                 if (user.emailVerified) {

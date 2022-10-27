@@ -1,22 +1,34 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 import { Link } from 'react-router-dom';
-import { FaEye, FaRegBookmark, FaShareAlt, FaStar } from 'react-icons/fa';
+import { FaEye, FaRegBookmark, FaShareAlt, FaStar, FaDownload } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
+import ReactToPdf from 'react-to-pdf';
 
 const Course = () => {
     const course = useLoaderData();
     const { picture, price, time, title, rating, details, category_id, total_view, _id } = course;
+    const ref = React.createRef();
     return (
-        <div className='my-4 mx-2 '>
-            <div className="">
+        <div className='my-4 mx-2  '>
+            <div className="" ref={ref}>
                 <div className="card shadow-lg rounded">
                     <img src={picture} className="card-img-top" alt="..." />
-                    <div className="card-body">
+                    <div className="card-body bg-light">
                         <h5 className="card-title">{title}</h5>
                         <p>{details}</p>
-                        <p>Course Cost: {price}$</p>
-                        <p>Duration : {time} Month</p>
+                        <div className='d-flex justify-content-between'>
+                            <p>Course Cost: {price}$</p>
+                            <div>
+                                <ReactToPdf targetRef={ref} filename="div-blue.pdf">
+                                    {({ toPdf }) => (
+                                        <button onClick={toPdf}>Download <FaDownload className='me-4'></FaDownload></button>
+                                    )}
+                                </ReactToPdf>
+
+                            </div>
+                        </div>
+                        <p className='mt-0'>Duration : {time} Month</p>
                         <div className=" d-flex justify-content-between align-items-center mb-4">
                             <div>
                                 <FaStar className='text-warning me-2'></FaStar>

@@ -40,6 +40,7 @@ const Header = () => {
                         <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/faq'>FAQ</Link></Nav.Link>
                         <Nav.Link ><Link className='text-black fw-bold fs-5' style={{ textDecoration: 'none' }} to='/block'>Blog</Link></Nav.Link>
                     </Nav>
+
                     <Nav>
                         <>
                             {
